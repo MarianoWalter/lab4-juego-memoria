@@ -86,7 +86,7 @@ for (let row of grilla) {
 		rowEl.appendChild(cellEl);
 
 		let imgEl = document.createElement('img');
-		imgEl.src = 'img/' + cell.valor + '.png';
+		imgEl.src = 'img/' + cell.valor + '.svg';
 		cellEl.appendChild(imgEl);
 		cellEl._celda = cell;
 		cell.el = cellEl;

@@ -1,0 +1,22 @@
+#tabla {
+    text-align: center;
+}
+
+.cell {
+    border: 2px solid #DDDDDD;
+    cursor: pointer;
+    display: inline-flex;
+    margin: 5px;
+    border-radius: 5px;
+}
+.cell.adivinada {
+    border-color: blue;
+}
+.cell img {
+    height: 100px;
+    width: 100px;
+    margin: 20px;
+}
+.cell:not(.ver) img {
+    visibility: hidden;
+}
