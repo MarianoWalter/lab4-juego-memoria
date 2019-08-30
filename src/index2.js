@@ -22,8 +22,8 @@ let UI = {
 
 		UI.btnReiniciar.onclick = () => {
 			let reiniciar = true;
-			if (!Juego.finIntentos()) {
-				confirm('¿Seguro que desea reiniciar el juego?');
+			if (!Juego.finIntentos() && !Juego.fueVictoria()) {
+				reiniciar = confirm('¿Seguro que desea reiniciar el juego?');
 			}
 
 			if (reiniciar) {
@@ -165,7 +165,7 @@ let Juego = {
 						.forEach(carta => carta.celda.classList.add('no-adivinada'));
 
 					// Timeout para que actualice la interfaz antes de mostrar el mensaje
-					setTimeout(() => alert('Se llegó al límite de intentos, has perdido!'), 50);
+					setTimeout(() => alert('Se llegó al límite de intentos, ha perdido!'), 50);
 				}
 			}, Juego.tiempoMuestra);
 		}
@@ -175,9 +175,18 @@ let Juego = {
 			carta.setSeleccionada(false);
 			carta.adivinada = true;
 			carta.celda.classList.add('adivinada');
-
-			// TODO verificar si se adivinaron todas
 		}
+
+		if (Juego.fueVictoria()) {
+			// Timeout para que actualice la interfaz antes de mostrar el mensaje
+			setTimeout(() => alert('Ha ganado!'), 50);
+		}
+	},
+
+	fueVictoria: function() {
+		let no_adivinadas = Juego.cartas.filter(carta => !carta.adivinada);
+
+		return no_adivinadas.length === 0;
 	},
 
 };
