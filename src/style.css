@@ -1,5 +1,5 @@
 html, body {
-	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	font-family: Calibri, sans-serif;
 }
 
 #titulo {
@@ -8,11 +8,11 @@ html, body {
 
 #opciones {
 	display: flex;
+	justify-content: space-around;
+	font-size: 1.3em;
 }
 
-#btnReiniciar {
-	/* TODO */
-}
+/* #btnReiniciar { } */
 
 #tabla {
 	text-align: center;
@@ -24,14 +24,24 @@ html, body {
 
 .cell {
 	border: 3px solid #DDDDDD;
+	background-color: #E3E3E3;
 	cursor: pointer;
 	display: inline-flex;
 	margin: 5px;
 	border-radius: 5px;
 }
 
+.cell.seleccionada {
+	border-color: black;
+}
+
 .cell.adivinada {
 	border-color: blue;
+	background-color: inherit;
+}
+
+.cell.no-adivinada {
+	border-color: red;
 }
 
 .cell img {
@@ -45,6 +55,7 @@ html, body {
 }
 
 .cell.adivinada img,
+.cell.no-adivinada img,
 .cell.seleccionada img {
 	visibility: inherit;
 }
