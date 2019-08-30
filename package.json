@@ -1,18 +1,21 @@
 {
   "name": "memoria",
-  "version": "1.0.0",
-  "description": "",
+  "private": true,
+  "version": "2.0.0",
+  "description": "Juego de Memoria - Laboratorio de Computación 4",
   "main": "index.js",
   "scripts": {
     "start": "hs -c-1 -o",
     "lint": "eslint ."
   },
   "keywords": [],
-  "author": "",
+  "author": "Mariano Walter <marianowalter.14@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "eslint": "^6.2.2",
-    "eslint-config-mwalter": "^1.0.3",
+    "eslint-config-mwalter": "^1.0.4"
+  },
+  "dependencies": {
     "http-server": "^0.11.1"
   }
 }
