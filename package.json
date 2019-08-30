@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "hs -c-1",
+    "start": "hs -c-1 -o",
     "lint": "eslint ."
   },
   "keywords": [],

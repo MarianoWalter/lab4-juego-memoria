@@ -7,11 +7,16 @@ function crearGrilla() {
 			adivinada: false,
 		};
 	});
-	values = values.concat(values).map(x => JSON.parse(JSON.stringify(x)));
+
+	values = values.concat(values)
+		.map(x => JSON.parse(JSON.stringify(x))) // Sino se duplica la referencia a un mismo objeto
+		.sort(() => Math.random() - 0.5); // Ordenar aleatoriamente
+
 	console.info({ values });
 
 	let arr = [];
 
+	// Ordenar los valores en una grilla (array de arrays)
 	let cont = 0;
 	values.forEach((v, i) => {
 		arr[i % size] = arr[i % size] || [];
